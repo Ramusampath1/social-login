@@ -1,0 +1,9 @@
+<h1>Homepage</h1>
+
+<% unless current_user %>
+  <%= link_to '<button type="button">Sign in using Facebook</button>'.html_safe, user_facebook_omniauth_authorize_path %>
+<% else %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% end %>
+
+	
